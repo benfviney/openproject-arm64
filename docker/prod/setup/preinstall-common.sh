@@ -1,23 +1,9 @@
 #!/bin/bash
 
-get_architecture() {	
-	if command -v uname > /dev/null; then
-		ARCHITECTURE=$(uname -m)
-		case $ARCHITECTURE in
-			aarch64|arm64)
-				echo "arm64"				
-				return 0
-				;;
-		esac
-	fi
-
-	echo "x64"
-	return 0
-}
 
 set -e
 set -o pipefail
-ARCHITECTURE=$(get_architecture)
+ARCHITECTURE=arm64
 
 # install node + npm
 curl -s https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-${ARCHITECTURE}.tar.gz | tar xzf - -C /usr/local --strip-components=1
