@@ -1,4 +1,4 @@
-FROM ruby:3.0.4-buster
+FROM ruby:3.0.4-bullseye
 MAINTAINER operations@openproject.com
 
 # Allow platform-specific additions. Valid values are: on-prem,saas,bahn
